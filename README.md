@@ -13,7 +13,7 @@ In this series, we will build a To-do List application using JavaScript framewor
 
 ## Building the projects
 
-Inside of each subfolder in this project, run `npm install` to gather dependencies, and `npm start` to build and serve the framework example application.
+Inside of each subfolder in this project, run `npm install` to gather dependencies, and `node index.js` to build and serve the framework example application.
 
 
 ## License
