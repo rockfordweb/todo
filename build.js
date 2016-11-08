@@ -10,16 +10,21 @@ let reactCompiler = webpack({
         path: BUILD_DIR,
         filename: 'app.js'
     },
-    loaders: [
-        {
-            test: /\.jsx$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: 'babel', // 'babel-loader' is also a legal name to reference
-            query: {
-                presets: ['es2015', 'react']
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader', // 'babel-loader' is also a legal name to reference
+                query: {
+                    presets: ['es2015', 'react']
+                }
             }
-        }
-    ]
+        ]
+    }
 });
 
 startWatcher(reactCompiler);
