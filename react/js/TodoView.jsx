@@ -3,15 +3,12 @@
 import React from 'react';
 
 let TodoView = React.createClass({
-	updateTodoItem: function (event) {
-		console.log('update todo item', event);
-	},
 	render: function () {
 		return (
-			<li>
-				<form onSubmit={this.updateTodoItem}>
-					<input type="checkbox" name="check-item" onChange={this.checkAll} checked={this.props.todo.checked} />
-					<input type="text" name="todo" value={this.props.todo.text} />
+			<li className={this.props.todo.hidden ? 'hidden' : ''}>
+				<form className={this.props.todo.id}>
+					<input type="checkbox" name="check-item" onChange={this.props.checkTodo} checked={this.props.todo.checked} />
+					<input type="text" name="todo" onChange={this.props.updateTodoText} value={this.props.todo.text} />
 				</form>
 			</li>
 		);
