@@ -1,0 +1,32 @@
+{
+  "name": "rkfdweb-todo",
+  "version": "1.0.0",
+  "description": "Todo Applications built in multiple frameworks!",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-react": "6.11.1",
+    "bootstrap": "3.3.7",
+    "react": "15.4.2"
+  },
+  "devDependencies": {
+    "express": "4.14.0",
+    "react-dom": "15.4.2",
+    "webpack": "1.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockfordweb/todo.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Jacob M. Roufa <jacob.roufa@gmail.com> (http://jacobroufa.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rockfordweb/todo/issues"
+  },
+  "homepage": "https://github.com/rockfordweb/todo#readme"
+}
