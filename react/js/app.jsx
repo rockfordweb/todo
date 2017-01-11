@@ -102,7 +102,7 @@ let App = React.createClass({
         let todos = this.state.todos;
 
         todos.map(function (todo) {
-            if (todo.id == event.target.parentNode.className) {
+            if (Array.prototype.includes.call(event.target.parentNode.parentNode.classList, todo.id.toString())) {
                 todo.checked = checked;
             }
         });
@@ -111,26 +111,28 @@ let App = React.createClass({
     },
     render: function () {
         return (
-            <div id="main">
-                <header>
+            <div id="main"
+                 className="panel panel-default">
+                <header className="panel-heading">
                     <h1>TODO Application</h1>
                 </header>
                 <TodoContainer
+                    className="panel-body form-group container-fluid"
                     addTodo={this.addTodo}
                     checkAll={this.checkAll}
                     updateTodoText={this.updateTodoText}
                     checkTodo={this.checkTodo}
                     todos={this.state.todos}/>
-                <footer>
-                    <span>{this.state.todos.filter(function (todo) {
+                <footer className="panel-footer">
+                    <div className="form-group"><span className="badge">{this.state.todos.filter(function (todo) {
                         return !todo.checked;
-                    }).length} item left</span>
-                    <div>
-                        <span onClick={this.filterTodos} className="all selector">All</span>
-                        <span onClick={this.filterTodos} className="active selector">Active</span>
-                        <span onClick={this.filterTodos} className="completed selector">Completed</span>
+                    }).length}</span> item left</div>
+                    <div className="btn-group form-group">
+                        <span onClick={this.filterTodos} className="all selector btn btn-default">All</span>
+                        <span onClick={this.filterTodos} className="active selector btn btn-default">Active</span>
+                        <span onClick={this.filterTodos} className="completed selector btn btn-default">Completed</span>
                     </div>
-                    <a onClick={this.handleClearClick}>Clear completed</a>
+                    <a className="form-group btn btn-warning" onClick={this.handleClearClick}>Clear completed</a>
                 </footer>
             </div>
         );

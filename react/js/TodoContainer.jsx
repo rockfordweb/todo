@@ -6,14 +6,17 @@ import TodoView from './TodoView.jsx';
 let TodoContainer = React.createClass({
 	render: function () {
 		return (
-			<div id="todo-container">
-				<form onSubmit={this.props.addTodo}>
-					<input type="checkbox" name="check-all" onChange={this.props.checkAll} />
-					<input type="text" name="new-todo" />
+			<div id="todo-container" className="col-sm-12">
+				<pre>
+				<form className="input-group form-group" onSubmit={this.props.addTodo}>
+					<span className="input-group-addon"><input type="checkbox" name="check-all" onChange={this.props.checkAll} /></span>
+					<input className="form-control" type="text" name="new-todo" />
 				</form>
-				<ul>
+				</pre>
+				<ul className="list-group list-unstyled">
 					{this.props.todos.map(function (todo) {
 						return <TodoView
+									className="list-group-item"
 									checkTodo={this.props.checkTodo}
 									updateTodoText={this.props.updateTodoText}
 									todo={todo}
